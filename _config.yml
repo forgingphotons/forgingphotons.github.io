@@ -1,0 +1,14 @@
+title: Forging Photons
+description: "Astrophotography & Optics"
+baseurl: ""
+url: "https://forgingphotons.github.io"
+
+markdown: kramdown
+theme: minima
+
+include:
+  - admin
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
