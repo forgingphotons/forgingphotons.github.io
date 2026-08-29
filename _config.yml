@@ -1,0 +1,12 @@
+title: La Mia Astrofotografia
+description: Una raccolta di scatti del cielo notturno
+collections:
+  photos:
+    output: true
+    permalink: /foto/:path/
+defaults:
+  - scope:
+      path: ""
+      type: "photos"
+    values:
+      layout: "photo"

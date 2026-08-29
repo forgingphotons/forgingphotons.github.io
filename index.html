@@ -1,0 +1,12 @@
+---
+layout: default
+title: Galleria
+---
+<div class="gallery">
+  {% for photo in site.photos %}
+  <a href="{{ photo.url | relative_url }}" class="gallery-item">
+    <img src="{{ photo.image | relative_url }}" alt="{{ photo.title }}" loading="lazy">
+    <span>{{ photo.title }}</span>
+  </a>
+  {% endfor %}
+</div>

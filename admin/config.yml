@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: tuonome/astro-gallery
+  branch: main
+  base_url: https://decap-proxy.<tuo-account>.workers.dev
+  auth_endpoint: auth
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+collections:
+  - name: "photos"
+    label: "Foto"
+    folder: "_photos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Immagine", name: "image", widget: "image" }
+      - { label: "Luogo di scatto", name: "location", widget: "string", required: false }
+      - { label: "Attrezzatura", name: "equipment", widget: "string", required: false }
+      - { label: "Esposizione", name: "exposure", widget: "string", required: false }
+      - { label: "Descrizione", name: "body", widget: "markdown" }

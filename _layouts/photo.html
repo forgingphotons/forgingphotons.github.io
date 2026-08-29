@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<article class="photo-page">
+  <h2>{{ page.title }}</h2>
+  <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+  <ul class="metadata">
+    <li><strong>Data:</strong> {{ page.date | date: "%d %B %Y" }}</li>
+    <li><strong>Luogo:</strong> {{ page.location }}</li>
+    <li><strong>Attrezzatura:</strong> {{ page.equipment }}</li>
+    <li><strong>Esposizione:</strong> {{ page.exposure }}</li>
+  </ul>
+  <p>{{ content }}</p>
+</article>
