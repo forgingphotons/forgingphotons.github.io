@@ -1,5 +1,3 @@
-include:
-  - admin
 backend:
   name: github
   repo: forgingphotons/forgingphotons.github.io
