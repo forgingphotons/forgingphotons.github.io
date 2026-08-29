@@ -1,18 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: forgingphotons/forgingphotons.github.io
   branch: main
-
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
-
-collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "_posts/"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
+  auth_type: oauth
+  app_id: Ov23lidDqXtmJHShDv48
