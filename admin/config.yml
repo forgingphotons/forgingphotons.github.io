@@ -2,7 +2,7 @@ backend:
   name: github
   repo: forgingphotons/forgingphotons.github.io
   branch: main
-  base_url: https://verceloauth-gv9h5xf6u-forgingphotons.vercel.app/admin/
+  base_url: https://verceloauth-gv9h5xf6u-forgingphotons.vercel.app/
   auth_endpoint: auth
 
 media_folder: "assets/images/uploads"
