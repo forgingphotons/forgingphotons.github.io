@@ -3,7 +3,7 @@ title: PHOTORAMA
 email: ""
 description: "Photo Journal"
 url: "https://forgingphotons.github.io"
-baseurl: ""
+base_url: https://decap-proxy.<tuo-account>.workers.dev
 facebook_username: ""
 twitter_username: ""
 instagram_username: ""
