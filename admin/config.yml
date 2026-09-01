@@ -2,7 +2,7 @@ backend:
   name: github
   repo: forgingphotons/forgingphotons.github.io
   branch: main
-  base_url: https://verceloauth-forgingphotons.vercel.app/
+  base_url: https://verceloauth-forgingphotons.vercel.app
   auth_endpoint: auth
 
 media_folder: "assets/images/uploads"
@@ -10,15 +10,34 @@ public_folder: "/assets/images/uploads"
 
 collections:
   - name: "photos"
-    label: "Foto"
+    label: "Fotografie"
     folder: "_photos"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Titolo", name: "title", widget: "string" }
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Nebulose", value: "nebulas" }
+          - { label: "Galassie", value: "galaxies" }
+          - { label: "Sistema Solare", value: "solar-system" }
+          - { label: "Paesaggi", value: "landscapes" }
       - { label: "Data", name: "date", widget: "datetime" }
       - { label: "Immagine", name: "image", widget: "image" }
       - { label: "Luogo di scatto", name: "location", widget: "string", required: false }
       - { label: "Attrezzatura", name: "equipment", widget: "string", required: false }
       - { label: "Esposizione", name: "exposure", widget: "string", required: false }
-      - { label: "Descrizione", name: "body", widget: "markdown" }
+      - { label: "Descrizione", name: "body", widget: "markdown", required: false }
+
+  - name: "pages"
+    label: "Pagine"
+    files:
+      - label: "About"
+        name: "about"
+        file: "about/index.md"
+        fields:
+          - { label: "Titolo", name: "title", widget: "string" }
+          - { label: "Foto profilo", name: "image", widget: "image", required: false }
+          - { label: "Contenuto", name: "body", widget: "markdown" }
