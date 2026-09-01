@@ -1,24 +1,18 @@
 # Site settings
-title: PHOTORAMA
+title: Forging Photons
 email: ""
-description: "Photo Journal"
+description: "Astrofotography - DIY"
 url: "https://forgingphotons.github.io"
 base_url: https://decap-proxy.<tuo-account>.workers.dev
-facebook_username: ""
-twitter_username: ""
 instagram_username: ""
-github_username:  ""
-deviantart_username: ""
-flickr_username: ""
-discus_shortname: ""
 share: true
 
 # Owner/author information
 owner:
-  name:   photorama
-  avatar: avatar.png
+  name:   Forging Photons
+  avatar: logo.png
   favicon: favicon.ico
-  info: photography website template
+  info: astrofotography & DIY gears
 
 # Settings for comments helper
 # Set 'provider' to the comment provider you want to use. (i.e.  Disqus, Intense Debate, livefyre, or Facebook Comments)
@@ -26,10 +20,10 @@ owner:
 #Set 'provider: false' to disable comments globally.
 # Disable comments for individual pages/posts by specifying 'comments: false' in the page/post YAML Front Matter.
 #
-comments :
-  provider : disqus
-  disqus :
-    short_name : ""
+#comments :
+ # provider : disqus
+  #disqus :
+  #  short_name : ""
 
 # Internal nav
 nav:
