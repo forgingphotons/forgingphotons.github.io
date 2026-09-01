@@ -1,12 +1,26 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
+
+{% include head.html %}
+
 <head>
-  <meta charset="UTF-8">
-  <title>{{ page.title | default: site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+{% if page.url == "/404.html" %}<meta http-equiv="refresh" content="5; url={{ site.baseurl }}/journal" />{% endif %}
 </head>
+
 <body>
-  <header><h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1></header>
-  <main>{{ content }}</main>
+
+    {% include nav.html %}
+
+    {{ content }}
+
+    {% include search.html %}
+
+    {% include newsletter.html %}
+
+    {% include footer.html %}
+
+   {% include Scroll_to_Top.html %}  
+
 </body>
+
 </html>
