@@ -33,9 +33,10 @@ comments :
 
 # Internal nav
 nav:
-  - NEBULAS: "https://forgingphotons.github.io/Nebulas/"
-  - GALAXIES: "https://forgingphotons.github.io/Galaxies"
-  - LANDSCAPES: "https://forgingphotons.github.io/Landscapes"
+  - NEBULOSE: "https://forgingphotons.github.io/nebulas/"
+  - GALASSIE: "https://forgingphotons.github.io/galaxies/"
+  - SISTEMA SOLARE: "https://forgingphotons.github.io/solar-system/"
+  - PAESAGGI: "https://forgingphotons.github.io/landscapes/"
   - ABOUT: "https://forgingphotons.github.io/about/"
 
 # All translation keys
