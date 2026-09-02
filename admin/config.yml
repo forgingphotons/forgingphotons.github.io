@@ -8,6 +8,19 @@ backend:
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
+media_processing:
+  enabled: true
+  format:
+    enabled: true
+    default: webp
+  quality:
+    enabled: true
+  strip_metadata: true
+  width:
+    enabled: true
+  height:
+    enabled: true
+  
 collections:
   - name: "photos"
     label: "Fotografie"
