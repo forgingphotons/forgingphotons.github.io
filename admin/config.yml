@@ -1,43 +1,47 @@
-backend:
-  name: github
-  repo: forgingphotons/forgingphotons.github.io
-  branch: main
-  base_url: https://verceloauth-forgingphotons.vercel.app
-  auth_endpoint: auth
-
-media_folder: "assets/images/uploads"
-public_folder: "/assets/images/uploads"
-  
 collections:
   - name: "photos"
-    label: "Fotografie"
+    label: "Foto"
     folder: "_photos"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - { label: "Titolo", name: "title", widget: "string" }
       - label: "Categoria"
         name: "category"
         widget: "select"
-        options:
-          - { label: "Nebulose", value: "nebulas" }
-          - { label: "Galassie", value: "galaxies" }
-          - { label: "Sistema Solare", value: "solar-system" }
-          - { label: "Paesaggi", value: "landscapes" }
+        options: ["Nebulose", "Galassie", "Pianeti", "Via Lattea", "Luna", "Cluster stellari", "Comete", "Altro"]
       - { label: "Data", name: "date", widget: "datetime" }
       - { label: "Immagine", name: "image", widget: "image" }
       - { label: "Luogo di scatto", name: "location", widget: "string", required: false }
       - { label: "Attrezzatura", name: "equipment", widget: "string", required: false }
       - { label: "Esposizione", name: "exposure", widget: "string", required: false }
-      - { label: "Descrizione", name: "body", widget: "markdown", required: false }
+      - { label: "Descrizione", name: "body", widget: "markdown" }
 
-  - name: "pages"
-    label: "Pagine"
-    files:
-      - label: "About"
-        name: "about"
-        file: "about/index.md"
-        fields:
-          - { label: "Titolo", name: "title", widget: "string" }
-          - { label: "Foto profilo", name: "image", widget: "image", required: false }
-          - { label: "Contenuto", name: "body", widget: "markdown" }
+      # --- Nuovi campi: dimensione e posizione ---
+      - label: "Dimensione in galleria"
+        name: "display_size"
+        widget: "select"
+        default: "medium"
+        options:
+          - { label: "Piccola", value: "small" }
+          - { label: "Media", value: "medium" }
+          - { label: "Grande", value: "large" }
+          - { label: "In evidenza (grande doppia)", value: "featured" }
+      - label: "Ordine in galleria"
+        name: "position"
+        widget: "number"
+        default: 100
+        hint: "Numero più basso = appare prima. Usa incrementi di 10 (10, 20, 30...) per potertici infilare foto in mezzo più facilmente."
+      - label: "Punto focale orizzontale"
+        name: "focal_x"
+        widget: "select"
+        default: "center"
+        required: false
+        options: ["left", "center", "right"]
+        hint: "Controlla quale parte dell'immagine resta visibile se viene ritagliata nella griglia"
+      - label: "Punto focale verticale"
+        name: "focal_y"
+        widget: "select"
+        default: "center"
+        required: false
+        options: ["top", "center", "bottom"]
