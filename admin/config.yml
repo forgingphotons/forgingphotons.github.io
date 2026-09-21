@@ -19,7 +19,7 @@ collections:
       - label: "Categoria"
         name: "category"
         widget: "select"
-        options: ["Nebulose", "Galassie", "Pianeti", "Via Lattea", "Luna", "Cluster stellari", "Comete", "Altro"]
+        options: ["NEBULOSE", "GALASSIE", "SISTEMA SOLARE", "PAESAGGI", "ABOUT"]
       - { label: "Data", name: "date", widget: "datetime" }
       - { label: "Immagine", name: "image", widget: "image" }
       - { label: "Luogo di scatto", name: "location", widget: "string", required: false }
