@@ -1,0 +1,58 @@
+/* =====================================================================
+   PALETTE DEL SITO  -  modifica i colori SOLO qui
+   ---------------------------------------------------------------------
+   Tutti gli altri file CSS (main.css, portfolio.css, ...) leggono questi
+   valori con var(--nome). Cambiando un codice qui cambia in tutto il sito.
+   Dopo il salvataggio servono 1-2 minuti per la pubblicazione, poi
+   ricarica la pagina con Ctrl+F5.
+   ===================================================================== */
+
+:root {
+
+  /* ---------- SFONDI: grigio antracite ---------- */
+  --bg:          #1e2225;  /* sfondo di tutte le pagine */
+  --bg-raised:   #272c30;  /* riquadri, pulsanti, foto in caricamento, banner senza immagine */
+  --bg-deep:     #14171a;  /* ombre dei titoli, campo di ricerca, lightbox */
+  --border:      #3a4248;  /* linee di separazione e bordi */
+
+  /* ---------- TESTI E DETTAGLI: bianco ---------- */
+  --white:       #ffffff;  /* titoli nei banner, voci del menu, icone */
+  --text:        #e9f1f2;  /* testo principale (bianco con un filo di ottanio) */
+  --text-muted:  #9db0b5;  /* testi secondari: date, didascalie, copyright */
+
+  /* ---------- OTTANIO: link e dettagli ---------- */
+  --accent:       #38b6c3; /* link, etichette attive (leggibile sull'antracite) */
+  --accent-light: #8adfe8; /* passaggio del mouse su menu e link, evidenze */
+  --accent-dark:  #0b6b78; /* sfondo di pulsanti, selezione del testo, icone social */
+  --accent-deep:  #0a4a54; /* riquadri in tinta ottanio scuro (newsletter, ecc.) */
+
+  /* ---------- TRASPARENZE (formato rgba) ----------
+     Sono gli stessi colori di sopra con una trasparenza: se cambi
+     --bg o --bg-deep, aggiorna anche questi tre numeri (R, G, B). */
+  --nav-bg:         rgba(30, 34, 37, 0.92);   /* barra del menu quando scorri la pagina (come --bg) */
+  --overlay:        rgba(20, 23, 26, 0.62);   /* velo scuro sopra la foto all'hover (come --bg-deep) */
+  --overlay-strong: rgba(20, 23, 26, 0.80);   /* velo sul telefono e ricerca (come --bg-deep) */
+  --accent-glow:    rgba(10, 74, 84, 0.85);   /* contorno delle voci del menu (come --accent-deep) */
+}
+
+
+/* =====================================================================
+   Correzioni agli elementi di Bootstrap (caricato prima di questo file)
+   così moduli, pulsanti e righe orizzontali seguono la palette.
+   ===================================================================== */
+hr                { border-top-color: var(--border); }
+.text-muted       { color: var(--text-muted); }
+blockquote        { border-left-color: var(--border); }
+
+.btn-default {
+  color: var(--text);
+  background-color: var(--bg-raised);
+  border-color: var(--border);
+}
+
+.form-control {
+  color: var(--text);
+  background-color: var(--bg-raised);
+  border-color: var(--border);
+}
+.form-control:focus { border-color: var(--accent); box-shadow: none; }

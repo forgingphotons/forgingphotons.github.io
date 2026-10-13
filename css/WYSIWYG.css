@@ -42,7 +42,7 @@ ol { list-style: decimal; }
 strong, input, button, .button { font-weight: bold; }
 nav ul { list-style: none; }
 em { font-style: italic; } 
-a { color: #EA8E00; text-decoration: none; 
+a { color: var(--accent); text-decoration: none; 
 -webkit-transition: all .2s ease; -moz-transition: all .2s ease; -ms-transition: all .2s ease; -o-transition: all .2s ease; transition: all .2s ease; }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover { text-decoration: none; }
 a:hover { text-decoration: none; color: #222;  } 
@@ -80,7 +80,7 @@ hr.divider { background: none; border: 0; padding: 1.5em 0; margin: 0; clear: bo
 
 .image-with-caption { width: 100%; position: relative; background: #222; margin: 0 0 1em 0; }
 .image-with-caption img { width: 100%; height: auto; margin: 0 0 -5px 0; -webkit-transition: all .2s ease; -moz-transition: all .2s ease; -ms-transition: all .2s ease; -o-transition: all .2s ease; transition: all .2s ease;  }
-.image-with-caption figcaption { position: absolute; width: 100%; padding: 1em 2em; bottom: 2em; color: #F7F6F5; font-size: 90%; opacity: 0; -webkit-transition: all .35s ease; -moz-transition: all .35s ease; -ms-transition: all .35s ease; -o-transition: all .35s ease; transition: all .35s ease;  }
+.image-with-caption figcaption { position: absolute; width: 100%; padding: 1em 2em; bottom: 2em; color: var(--text); font-size: 90%; opacity: 0; -webkit-transition: all .35s ease; -moz-transition: all .35s ease; -ms-transition: all .35s ease; -o-transition: all .35s ease; transition: all .35s ease;  }
 .image-with-caption:hover figcaption { opacity: 1; bottom: 0; }
 .image-with-caption:hover img { opacity: .3; }
 .image-with-caption p:first-of-type { font-family: Times, serif; font-style: italic; font-size: .9em; opacity: .8; }
@@ -98,7 +98,7 @@ table tr:nth-child(odd)  td {  }
 table tr:nth-child(even) td {  }
 table p { padding: 0; }
 table sup { vertical-align: text-top; font-size: .55em; display: inline-block; margin: 2px 5px 0 -10px; }
-table p.table-top { display: inline-block; background: #EA8E00; color: #F7F6F5; text-transform: uppercase; padding: 7px 1em 5px 1em; font-size: .6em; line-height: 1; position: relative; top: -16px; margin-bottom: 1em; font-weight: bold; letter-spacing: .05em; }
+table p.table-top { display: inline-block; background: var(--accent); color: var(--text); text-transform: uppercase; padding: 7px 1em 5px 1em; font-size: .6em; line-height: 1; position: relative; top: -16px; margin-bottom: 1em; font-weight: bold; letter-spacing: .05em; }
 
 ul.arrows, ul.ticks { padding-left: 2em; }
 ul.arrows li, ul.ticks li { list-style: none; position: relative; }

@@ -11,7 +11,7 @@
 /* Il menu del tema è fisso in alto: lascia spazio alle pagine senza banner */
 .fp-top-space { padding-top: 110px; }
 
-.fp-empty { color: #777; text-align: center; padding: 40px 0; }
+.fp-empty { color: var(--text-muted); text-align: center; padding: 40px 0; }
 
 .fp-gallery {
   display: grid;
@@ -26,7 +26,7 @@
   display: block;
   overflow: hidden;
   border-radius: 4px;
-  background: #1a1d24;
+  background: var(--bg-raised);
   cursor: pointer;
   grid-column: span 3;
   aspect-ratio: 3 / 2;
@@ -65,7 +65,7 @@
   align-items: center;
   text-align: center;
   padding: 16px;
-  background: rgba(0, 0, 0, 0.55);
+  background: var(--overlay);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -73,13 +73,13 @@
 .fp-item:focus .fp-overlay { opacity: 1; }
 
 .fp-overlay-title {
-  color: #fff;
+  color: var(--white);
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 8px;
 }
 .fp-overlay-excerpt {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text);
   font-size: 0.85rem;
   line-height: 1.4;
 }
@@ -112,7 +112,7 @@
     align-items: flex-start;
     text-align: left;
     padding: 10px;
-    background: linear-gradient(transparent 55%, rgba(0, 0, 0, 0.7));
+    background: linear-gradient(transparent 55%, var(--overlay-strong));
   }
   .fp-overlay-title { font-size: 0.9rem; margin: 0; }
   .fp-overlay-excerpt { display: none; }
@@ -136,12 +136,12 @@
   gap: 8px 32px;
   margin: 20px 0;
   padding: 14px 0;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 .fp-meta div { min-width: 120px; }
 .fp-meta dt {
-  color: #777;
+  color: var(--text-muted);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;

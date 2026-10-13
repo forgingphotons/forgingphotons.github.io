@@ -31,5 +31,5 @@ hr.medium {
     max-width: 450px;
     margin: 15px auto;
     border-width: 4px;
-    border-color: #d9d4d0;
+    border-color: var(--border);
 }
