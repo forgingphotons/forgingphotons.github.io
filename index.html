@@ -2,19 +2,31 @@
 layout: default
 title: Galleria
 ---
-<div class="gallery">
-  {% assign sorted_photos = site.photos | sort: "position" %}
-  {% for photo in sorted_photos %}
-  <a href="{{ photo.url | relative_url }}"
-     class="gallery-item size-{{ photo.display_size | default: 'medium' }}">
-    <img src="{{ photo.image | relative_url }}"
-         alt="{{ photo.title }}"
-         loading="lazy"
-         style="object-position: {{ photo.focal_x | default: 'center' }} {{ photo.focal_y | default: 'center' }};">
-    <div class="overlay">
-      <span class="overlay-title">{{ photo.title }}</span>
-      <span class="overlay-excerpt">{{ photo.content | strip_html | truncate: 110 }}</span>
+{%- comment -%}
+  La home mostra le foto con "Mostra anche in home" attivo.
+  Se non ce n'è nessuna, mostra tutte le foto così la pagina non resta vuota.
+{%- endcomment -%}
+{%- assign home_photos = site.photos | where: "show_home", true -%}
+{%- if home_photos.size == 0 -%}
+  {%- assign home_photos = site.photos -%}
+{%- endif -%}
+
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/gallery-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{ site.title }}</h1>
+                    <hr class="small">
+                    <span class="subheading">{{ site.description }}</span>
+                </div>
+            </div>
+        </div>
     </div>
-  </a>
-  {% endfor %}
+</header>
+
+<div class="fp-wrap">
+  {% include gallery.html photos=home_photos %}
 </div>
+
+{% include scripts.html %}

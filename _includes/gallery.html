@@ -1,0 +1,24 @@
+{%- comment -%}
+  Griglia di foto. Parametro: photos = elenco di foto (ordinato per "position").
+  Le classi hanno prefisso "fp-" per non collidere con quelle del tema (.gallery, .gallery-item).
+{%- endcomment -%}
+{%- assign sorted_photos = include.photos | sort: "position" -%}
+{%- if sorted_photos.size == 0 -%}
+  <p class="fp-empty">Nessuna foto in questa galleria, per ora.</p>
+{%- else -%}
+<div class="fp-gallery">
+  {%- for photo in sorted_photos -%}
+  <a href="{{ photo.url | relative_url }}"
+     class="fp-item fp-size-{{ photo.display_size | default: 'medium' }} fp-shape-{{ photo.shape | default: 'landscape' }}">
+    <img src="{{ photo.image | relative_url }}"
+         alt="{{ photo.alt | default: photo.title }}"
+         loading="lazy"
+         style="object-position: {{ photo.focal_x | default: 'center' }} {{ photo.focal_y | default: 'center' }};">
+    <div class="fp-overlay">
+      <span class="fp-overlay-title">{{ photo.title }}</span>
+      <span class="fp-overlay-excerpt">{{ photo.content | strip_html | strip_newlines | truncate: 110 }}</span>
+    </div>
+  </a>
+  {%- endfor -%}
+</div>
+{%- endif -%}

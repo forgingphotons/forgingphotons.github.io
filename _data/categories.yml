@@ -1,0 +1,15 @@
+# Descrizioni mostrate sotto il titolo di ogni galleria.
+# Lo "slug" deve coincidere con il valore del menu "Galleria" in admin/config.yml
+# e con il campo "category" della pagina galleria (es. galaxies.html).
+- slug: galaxies
+  title: Galassie
+  description: Isole di stelle a milioni di anni luce da noi.
+- slug: nebulas
+  title: Nebulose
+  description: Nubi di gas e polveri dove nascono e muoiono le stelle.
+- slug: solar-system
+  title: Sistema solare
+  description: Luna, Sole, pianeti e comete, il nostro cortile cosmico.
+- slug: landscapes
+  title: Paesaggi
+  description: Il cielo notturno insieme al paesaggio che lo accompagna.

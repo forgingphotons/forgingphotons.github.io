@@ -5,57 +5,105 @@ backend:
   base_url: https://verceloauth-forgingphotons.vercel.app
   auth_endpoint: auth
 
+site_url: https://forgingphotons.github.io
+display_url: https://forgingphotons.github.io
+locale: it
+
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
-  
+
 collections:
+  # ------------------------- FOTO -------------------------
   - name: "photos"
     label: "Foto"
+    label_singular: "Foto"
     folder: "_photos"
     create: true
+    extension: "md"
     slug: "{{slug}}"
+    summary: "{{title}} · {{category}} · pos. {{position}}"
+    sortable_fields: ["title", "category", "position", "date"]
     fields:
       - { label: "Titolo", name: "title", widget: "string" }
-      - label: "Categoria"
+
+      - label: "Galleria (categoria)"
         name: "category"
         widget: "select"
-        options: ["NEBULOSE", "GALASSIE", "SISTEMA SOLARE", "PAESAGGI", "ABOUT"]
-      - { label: "Data", name: "date", widget: "datetime" }
+        options:
+          - { label: "Nebulose", value: "nebulas" }
+          - { label: "Galassie", value: "galaxies" }
+          - { label: "Sistema solare", value: "solar-system" }
+          - { label: "Paesaggi", value: "landscapes" }
+        hint: "La foto comparirà nella galleria scelta."
+
+      - label: "Mostra anche in home"
+        name: "show_home"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "Se nessuna foto è spuntata, la home mostra tutte le foto."
+
       - { label: "Immagine", name: "image", widget: "image" }
+      - { label: "Testo alternativo", name: "alt", widget: "string", required: false, hint: "Breve descrizione per chi non vede l'immagine. Se vuoto si usa il titolo." }
+
+      # --- Dettagli di scatto ---
+      - { label: "Data di acquisizione", name: "date", widget: "datetime" }
       - { label: "Luogo di scatto", name: "location", widget: "string", required: false }
       - { label: "Attrezzatura", name: "equipment", widget: "string", required: false }
       - { label: "Esposizione", name: "exposure", widget: "string", required: false }
-      - { label: "Descrizione", name: "body", widget: "markdown" }
 
-      # --- Nuovi campi: dimensione e posizione ---
+      # --- Dimensione, forma e posizione nella galleria ---
       - label: "Dimensione in galleria"
         name: "display_size"
         widget: "select"
         default: "medium"
         options:
-          - { label: "Piccola", value: "small" }
-          - { label: "Media", value: "medium" }
-          - { label: "Grande", value: "large" }
-          - { label: "In evidenza (grande doppia)", value: "featured" }
+          - { label: "Piccola (1/3 della riga)", value: "small" }
+          - { label: "Media (1/2 della riga)", value: "medium" }
+          - { label: "Grande (2/3 della riga)", value: "large" }
+          - { label: "In evidenza (riga intera)", value: "featured" }
+
+      - label: "Forma del riquadro"
+        name: "shape"
+        widget: "select"
+        default: "landscape"
+        options:
+          - { label: "Orizzontale (3:2)", value: "landscape" }
+          - { label: "Verticale (4:5)", value: "portrait" }
+          - { label: "Quadrata (1:1)", value: "square" }
+          - { label: "Panoramica (21:9)", value: "panorama" }
+        hint: "L'immagine viene ritagliata per riempire il riquadro."
+
       - label: "Ordine in galleria"
         name: "position"
         widget: "number"
+        value_type: "int"
         default: 100
-        hint: "Numero più basso = appare prima. Usa incrementi di 10 (10, 20, 30...) per potertici infilare foto in mezzo più facilmente."
+        hint: "Numero più basso = appare prima. Usa 10, 20, 30... per poter inserire foto in mezzo."
+
       - label: "Punto focale orizzontale"
         name: "focal_x"
         widget: "select"
         default: "center"
         required: false
-        options: ["left", "center", "right"]
-        hint: "Controlla quale parte dell'immagine resta visibile se viene ritagliata nella griglia"
+        options:
+          - { label: "Sinistra", value: "left" }
+          - { label: "Centro", value: "center" }
+          - { label: "Destra", value: "right" }
+
       - label: "Punto focale verticale"
         name: "focal_y"
         widget: "select"
         default: "center"
         required: false
-        options: ["top", "center", "bottom"]
+        options:
+          - { label: "Alto", value: "top" }
+          - { label: "Centro", value: "center" }
+          - { label: "Basso", value: "bottom" }
 
+      - { label: "Descrizione", name: "body", widget: "markdown" }
+
+  # ------------------------- PAGINE -------------------------
   - name: "pages"
     label: "Pagine"
     files:
@@ -63,7 +111,9 @@ collections:
         name: "about"
         file: "about/index.md"
         fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+          - { label: "Attiva nel menu", name: "active", widget: "hidden", default: "about" }
+          - { label: "Immagine di intestazione", name: "header-img", widget: "hidden", default: "img/about-bg.jpg" }
           - { label: "Titolo", name: "title", widget: "string" }
-          - { label: "Foto profilo", name: "image", widget: "image", required: false }
-          - { label: "Contenuto", name: "body", widget: "markdown" }
-
+          - { label: "Sottotitolo", name: "description", widget: "string", required: false }
+          - { label: "Testo", name: "body", widget: "markdown" }

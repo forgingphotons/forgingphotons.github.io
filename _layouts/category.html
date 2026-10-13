@@ -1,23 +1,26 @@
 ---
 layout: default
 ---
-<div class="category-page">
-  <h1>{{ page.title }}</h1>
+{%- assign cat = site.data.categories | where: "slug", page.category | first -%}
 
-  {% assign photos = site.photos | where: "category", page.category | sort: "date" | reverse %}
-
-  {% if photos.size == 0 %}
-    <p>Nessuna foto ancora pubblicata in questa categoria.</p>
-  {% else %}
-    <div class="photo-grid">
-      {% for photo in photos %}
-        <div class="photo-item">
-          <img src="{{ photo.image | relative_url }}" alt="{{ photo.title }}">
-          <h3>{{ photo.title }}</h3>
-          {% if photo.location %}<p class="meta">{{ photo.location }}</p>{% endif %}
-          {% if photo.equipment %}<p class="meta">{{ photo.equipment }}</p>{% endif %}
+<!-- Intestazione nello stile del tema -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/gallery-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{ page.title }}</h1>
+                    <hr class="small">
+                    <span class="subheading">{{ cat.description }}</span>
+                </div>
+            </div>
         </div>
-      {% endfor %}
     </div>
-  {% endif %}
+</header>
+
+<div class="fp-wrap">
+  {%- assign category_photos = site.photos | where: "category", page.category -%}
+  {% include gallery.html photos=category_photos %}
 </div>
+
+{% include scripts.html %}

@@ -3,7 +3,6 @@ title: Forging Photons
 email: ""
 description: "Astrofotography - DIY"
 url: "https://forgingphotons.github.io"
-base_url: https://decap-proxy.<tuo-account>.workers.dev
 instagram_username: ""
 share: true
 
@@ -54,7 +53,7 @@ categories_path: "/journal/category/"
 tags_path: "/journal/tag/"
 gems: 
  - jekyll-paginate
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","decap-proxy","wrangler.jsonc","wrangler.toml"]
 
 # SiteMap
 sitemap:
@@ -70,4 +69,12 @@ sitemap:
 
 collections:
   photos:
-    output: false
+    output: true
+    permalink: /foto/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "photos"
+    values:
+      layout: "photo"

@@ -1,0 +1,151 @@
+/* ============ Gallerie fotografiche ============
+   Griglia a 6 colonne (desktop). Ogni foto occupa un numero di colonne
+   in base a "Dimensione" e ha le proporzioni scelte in "Forma". */
+
+.fp-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Il menu del tema è fisso in alto: lascia spazio alle pagine senza banner */
+.fp-top-space { padding-top: 110px; }
+
+.fp-empty { color: #777; text-align: center; padding: 40px 0; }
+
+.fp-gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-flow: dense;
+  align-items: start;
+  gap: 12px;
+}
+
+.fp-item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #1a1d24;
+  cursor: pointer;
+  grid-column: span 3;
+  aspect-ratio: 3 / 2;
+}
+
+.fp-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.fp-item:hover img { transform: scale(1.05); }
+
+/* Dimensione = quante colonne occupa */
+.fp-item.fp-size-small    { grid-column: span 2; }
+.fp-item.fp-size-medium   { grid-column: span 3; }
+.fp-item.fp-size-large    { grid-column: span 4; }
+.fp-item.fp-size-featured { grid-column: span 6; }
+
+/* Forma = proporzioni del riquadro */
+.fp-item.fp-shape-landscape { aspect-ratio: 3 / 2; }
+.fp-item.fp-shape-portrait  { aspect-ratio: 4 / 5; }
+.fp-item.fp-shape-square    { aspect-ratio: 1 / 1; }
+.fp-item.fp-shape-panorama  { aspect-ratio: 21 / 9; }
+
+/* Overlay al passaggio del mouse */
+.fp-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.fp-item:hover .fp-overlay,
+.fp-item:focus .fp-overlay { opacity: 1; }
+
+.fp-overlay-title {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.fp-overlay-excerpt {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Tablet: 4 colonne */
+@media (max-width: 900px) {
+  .fp-gallery { grid-template-columns: repeat(4, 1fr); }
+  .fp-item.fp-size-small    { grid-column: span 1; }
+  .fp-item.fp-size-medium   { grid-column: span 2; }
+  .fp-item.fp-size-large    { grid-column: span 3; }
+  .fp-item.fp-size-featured { grid-column: span 4; }
+}
+
+/* Telefono: 2 colonne */
+@media (max-width: 560px) {
+  .fp-wrap { padding: 14px; }
+  .fp-gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .fp-item.fp-size-small,
+  .fp-item.fp-size-medium   { grid-column: span 1; }
+  .fp-item.fp-size-large,
+  .fp-item.fp-size-featured { grid-column: span 2; }
+  .fp-item.fp-shape-panorama { aspect-ratio: 16 / 9; }
+}
+
+/* Touch: niente hover, mostra solo il titolo in basso */
+@media (hover: none) {
+  .fp-overlay {
+    opacity: 1;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: left;
+    padding: 10px;
+    background: linear-gradient(transparent 55%, rgba(0, 0, 0, 0.7));
+  }
+  .fp-overlay-title { font-size: 0.9rem; margin: 0; }
+  .fp-overlay-excerpt { display: none; }
+}
+
+/* ============ Pagina singola foto ============ */
+.fp-photo { max-width: 1100px; margin: 0 auto; padding: 0 20px 40px; }
+.fp-photo h1 { margin: 8px 0 16px; }
+.fp-back { margin: 0; font-size: 0.9rem; }
+
+.fp-photo-full { display: block; }
+.fp-photo-full img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.fp-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  margin: 20px 0;
+  padding: 14px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.fp-meta div { min-width: 120px; }
+.fp-meta dt {
+  color: #777;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.fp-meta dd { margin: 0; }
+
+.fp-description { max-width: 70ch; }
