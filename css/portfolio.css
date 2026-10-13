@@ -72,17 +72,28 @@
 .fp-item:hover .fp-overlay,
 .fp-item:focus .fp-overlay { opacity: 1; }
 
+/* Nota: il tema imposta 1rem = 10px, quindi 2.4rem = 24px e 1.8rem = 18px */
+.fp-overlay { overflow: hidden; }
+
 .fp-overlay-title {
   color: var(--white);
-  font-size: 1.1rem;
+  font-size: 2.4rem;
   font-weight: 600;
-  margin-bottom: 8px;
+  line-height: 1.2;
+  margin-bottom: 10px;
 }
 .fp-overlay-excerpt {
   color: var(--text);
-  font-size: 0.85rem;
+  font-size: 1.8rem;
   line-height: 1.4;
+  /* taglia l'estratto con "..." se non entra nel riquadro */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }
+/* Nelle foto piccole c'è meno spazio: meno righe di estratto */
+.fp-item.fp-size-small .fp-overlay-excerpt { -webkit-line-clamp: 2; }
 
 /* Tablet: 4 colonne */
 @media (max-width: 900px) {
@@ -114,7 +125,7 @@
     padding: 10px;
     background: linear-gradient(transparent 55%, var(--overlay-strong));
   }
-  .fp-overlay-title { font-size: 0.9rem; margin: 0; }
+  .fp-overlay-title { font-size: 2rem; margin: 0; }
   .fp-overlay-excerpt { display: none; }
 }
 

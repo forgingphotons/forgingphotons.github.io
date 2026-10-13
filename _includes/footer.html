@@ -28,7 +28,7 @@
                     {% endif %}
                     {% if site.instagram_username %}
                     <li>
-                        <a href="https://instagram.com/{{ site.instagram_username }}" data-toggle="tooltip" title="Instagram">
+                        <a href="https://www.instagram.com/{{ site.instagram_username }}/" data-toggle="tooltip" title="Instagram" target="_blank" rel="noopener">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -73,15 +73,6 @@
                                 <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
 </span>
           </a> </li>
-
-         <li>
-                        <a href="{{ "/feed.xml" | prepend: site.baseurl }}" data-toggle="tooltip" title="Feed">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
                 </ul>
                 <p class="copyright text-muted">Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}</p>
 <center><h6><p>Powered by <a href="https://github.com/jekyll/">Jekyll</a>.</p></h6></center>
