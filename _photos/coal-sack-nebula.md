@@ -3,7 +3,7 @@ title: Coal sack nebula
 category: nebulas
 show_home: false
 image: /assets/images/uploads/coalsack.png
-date: 2026-10-13T12:17:00.000+02:00
+shot_date: 2026-10-13T12:17:00.000+02:00
 display_size: large
 shape: landscape
 position: 100

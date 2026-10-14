@@ -159,4 +159,27 @@
 }
 .fp-meta dd { margin: 0; }
 
+/* Informazioni tecniche (solo nella pagina della foto) */
+.fp-tech {
+  max-width: 70ch;
+  margin: 24px 0;
+  padding: 14px 20px 16px;
+  background: var(--bg-raised);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+}
+.fp-tech h2 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.fp-tech-body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  white-space: pre-line;   /* mantiene gli a capo scritti in Decap */
+}
+
 .fp-description { max-width: 70ch; }

@@ -22,7 +22,7 @@ collections:
     extension: "md"
     slug: "{{slug}}"
     summary: "{{title}} · {{category}} · pos. {{position}}"
-    sortable_fields: ["title", "category", "position", "date"]
+    sortable_fields: ["title", "category", "position", "shot_date"]
     fields:
       - { label: "Titolo", name: "title", widget: "string" }
 
@@ -48,10 +48,15 @@ collections:
       - { label: "Testo alternativo", name: "alt", widget: "string", required: false, hint: "Breve descrizione per chi non vede l'immagine. Se vuoto si usa il titolo." }
 
       # --- Dettagli di scatto ---
-      - { label: "Data di acquisizione", name: "date", widget: "datetime", required: false, default: "", hint: "Facoltativa: se vuota, la data non viene mostrata." }
+      - { label: "Data di acquisizione", name: "shot_date", widget: "datetime", required: false, default: "", hint: "Facoltativa: se vuota, la data non viene mostrata." }
       - { label: "Luogo di scatto", name: "location", widget: "string", required: false }
       - { label: "Attrezzatura", name: "equipment", widget: "string", required: false }
       - { label: "Esposizione", name: "exposure", widget: "string", required: false }
+      - label: "Informazioni tecniche"
+        name: "technical_info"
+        widget: "text"
+        required: false
+        hint: "Facoltativo, testo libero: una voce per riga. Es. Type: planetary nebula / Constellation: Hydra / Distance: 2,500 light years. Compare solo nella pagina della foto, non nell'anteprima in galleria."
 
       # --- Dimensione, forma e posizione nella galleria ---
       - label: "Dimensione in galleria"

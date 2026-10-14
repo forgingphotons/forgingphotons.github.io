@@ -3,7 +3,7 @@ title: Milkyway
 category: nebulas
 show_home: true
 image: /assets/images/uploads/mw3.jpg
-date: 2026-10-13T15:34:00.000+02:00
+shot_date: 2026-10-13T15:34:00.000+02:00
 display_size: small
 shape: square
 position: 100

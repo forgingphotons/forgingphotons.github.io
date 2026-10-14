@@ -16,11 +16,19 @@ layout: default
   </a>
 
   <dl class="fp-meta">
-    {% if page.date %}<div><dt>Date</dt><dd>{{ page.date | date: "%B %-d, %Y" }}</dd></div>{% endif %}
+    {% if page.shot_date and page.shot_date != "" %}<div><dt>Date</dt><dd>{{ page.shot_date | date: "%B %-d, %Y" }}</dd></div>{% endif %}
     {% if page.location %}<div><dt>Location</dt><dd>{{ page.location }}</dd></div>{% endif %}
     {% if page.equipment %}<div><dt>Equipment</dt><dd>{{ page.equipment }}</dd></div>{% endif %}
     {% if page.exposure %}<div><dt>Exposure</dt><dd>{{ page.exposure }}</dd></div>{% endif %}
   </dl>
+
+  {%- assign tech_info = page.technical_info | strip -%}
+  {%- if tech_info != "" %}
+  <section class="fp-tech">
+    <h2>Technical details</h2>
+    <div class="fp-tech-body">{{ tech_info | escape }}</div>
+  </section>
+  {%- endif %}
 
   <div class="fp-description">
     {{ content }}
