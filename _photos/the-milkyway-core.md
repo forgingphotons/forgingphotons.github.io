@@ -1,7 +1,7 @@
 ---
 title: "The Heart of the Milky Way: Galactic Center & Sagittarius Complex"
 category: nebulas
-show_home: true
+show_home: false
 image: /assets/images/uploads/pipa.jpg
 shot_date: ""
 technical_info: >-
