@@ -261,7 +261,9 @@ hr.small {
   border-bottom-left-radius: 5px;
 }
 footer {
-  margin: -30px 0 0px;
+  /* margine positivo: il tema aveva -30px e il footer copriva le ultime foto */
+  margin: 60px 0 0;
+  padding-bottom: 30px;
 }
 footer .list-inline {
   margin: 0;

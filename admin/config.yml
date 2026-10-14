@@ -48,7 +48,7 @@ collections:
       - { label: "Testo alternativo", name: "alt", widget: "string", required: false, hint: "Breve descrizione per chi non vede l'immagine. Se vuoto si usa il titolo." }
 
       # --- Dettagli di scatto ---
-      - { label: "Data di acquisizione", name: "date", widget: "datetime" }
+      - { label: "Data di acquisizione", name: "date", widget: "datetime", required: false, default: "", hint: "Facoltativa: se vuota, la data non viene mostrata." }
       - { label: "Luogo di scatto", name: "location", widget: "string", required: false }
       - { label: "Attrezzatura", name: "equipment", widget: "string", required: false }
       - { label: "Esposizione", name: "exposure", widget: "string", required: false }
