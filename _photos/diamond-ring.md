@@ -3,6 +3,10 @@ title: Abell 33 - Diamond Ring Nebula
 category: nebulas
 show_home: false
 image: /assets/images/uploads/abell33.jpg
+technical_info: |-
+  Type: Planetary Nebula
+  Constellation: Hydra
+  Distance: Approximately 2,700 light-years
 display_size: medium
 shape: landscape
 position: 100
