@@ -1,8 +1,8 @@
 ---
 layout: page
 title: About me
-description: Chi c'è dietro Forging Photons
+description: Who is behind Forging Photons
 active: about
 header-img: img/about-bg.jpg
 ---
-sto cercando di capire come funziona decap
+I'm still figuring out how Decap works.

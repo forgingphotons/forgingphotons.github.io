@@ -32,6 +32,7 @@ collections:
         options:
           - { label: "Nebulose", value: "nebulas" }
           - { label: "Galassie", value: "galaxies" }
+          - { label: "Ammassi", value: "clusters" }
           - { label: "Sistema solare", value: "solar-system" }
           - { label: "Paesaggi", value: "landscapes" }
         hint: "La foto comparirà nella galleria scelta."

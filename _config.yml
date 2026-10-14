@@ -26,10 +26,11 @@ owner:
 
 # Internal nav
 nav:
-  - NEBULOSE: "https://forgingphotons.github.io/nebulas/"
-  - GALASSIE: "https://forgingphotons.github.io/galaxies/"
-  - SISTEMA SOLARE: "https://forgingphotons.github.io/solar-system/"
-  - PAESAGGI: "https://forgingphotons.github.io/landscapes/"
+  - NEBULAS: "https://forgingphotons.github.io/nebulas/"
+  - GALAXIES: "https://forgingphotons.github.io/galaxies/"
+  - CLUSTERS: "https://forgingphotons.github.io/clusters/"
+  - SOLAR SYSTEM: "https://forgingphotons.github.io/solar-system/"
+  - LANDSCAPES: "https://forgingphotons.github.io/landscapes/"
   - ABOUT: "https://forgingphotons.github.io/about/"
 
 # All translation keys

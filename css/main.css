@@ -47,13 +47,33 @@ hr.small {
   border-width: 4px;
   border-color: var(--white);
 }
+/* Barra del menu: SEMPRE fissa al bordo superiore della finestra.
+   In cima alla pagina è trasparente sopra il banner; appena si scorre
+   (classe .is-scrolled, aggiunta da uno script in _includes/nav.html)
+   diventa scura e il logo si rimpicciolisce. */
 .navbar-custom {
   background-color: transparent;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1030;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  transition: background-color 0.3s ease;
+}
+.navbar-custom .nav-logo {
+  width: 150px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: width 0.3s ease, margin-top 0.3s ease;
+}
+.navbar-custom.is-scrolled {
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+}
+.navbar-custom.is-scrolled .nav-logo {
+  width: 56px;
+  margin-top: 6px;
 }
 .navbar-custom .navbar-brand {
   font-weight: 800;
@@ -86,49 +106,22 @@ hr.small {
     color: var(--accent-light);
   }
 }
-@media only screen and (min-width: 1170px) {
-  .navbar-custom {
-    -webkit-transition: background-color 0.3s;
-    -moz-transition: background-color 0.3s;
-    transition: background-color 0.3s;
-    /* Force Hardware Acceleration in WebKit */
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+
+/* Tablet / finestre strette (768-991px): voci del menu più compatte,
+   così le sei voci restano sulla stessa riga del logo. */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .navbar-custom .nav li a {
+    padding: 20px 9px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
   }
-  .navbar-custom.is-fixed {
-    /* when the user scrolls down, we hide the header right above the viewport */
-    position: fixed;
-    top: -61px;
-    background-color: var(--nav-bg);
-    -webkit-transition: -webkit-transform 0.3s;
-    -moz-transition: -moz-transform 0.3s;
-    transition: transform 0.3s;
-  }
-  .navbar-custom.is-fixed .navbar-brand {
-    color: var(--white);
-  }
-  .navbar-custom.is-fixed .navbar-brand:hover {
-    color: var(--accent-light);
-  }
-  
-  .navbar-custom.is-fixed .nav li a:hover {
-    color: var(--accent-light);
-  }
-.navbar-custom.is-fixed .nav li a:active{
-    color: var(--accent-light);
-  }
-  .navbar-custom.is-visible {
-    /* if the user changes the scrolling direction, we show the header */
-    -webkit-transform: translate3d(0, 100%, 0);
-    -moz-transform: translate3d(0, 100%, 0);
-    -ms-transform: translate3d(0, 100%, 0);
-    -o-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+}
+
+/* Telefono: il menu aperto usa i colori della palette (il tema lo aveva nero puro) */
+@media only screen and (max-width: 767px) {
+  .navbar-custom .navbar-nav {
+    background-color: var(--bg-raised);
+    border: 1px solid var(--border);
   }
 }
 .intro-header {

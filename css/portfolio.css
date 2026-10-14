@@ -9,7 +9,7 @@
 }
 
 /* Il menu del tema è fisso in alto: lascia spazio alle pagine senza banner */
-.fp-top-space { padding-top: 110px; }
+.fp-top-space { padding-top: 170px; }
 
 .fp-empty { color: var(--text-muted); text-align: center; padding: 40px 0; }
 

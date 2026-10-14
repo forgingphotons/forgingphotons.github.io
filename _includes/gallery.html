@@ -4,7 +4,7 @@
 {%- endcomment -%}
 {%- assign sorted_photos = include.photos | sort: "position" -%}
 {%- if sorted_photos.size == 0 -%}
-  <p class="fp-empty">Nessuna foto in questa galleria, per ora.</p>
+  <p class="fp-empty">No photos in this gallery yet.</p>
 {%- else -%}
 <div class="fp-gallery">
   {%- for photo in sorted_photos -%}

@@ -1,12 +1,12 @@
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top" style="margin-right:1em; z-index: 1;">
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top" style="margin-right:1em;">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <i class="fa fa-bars fa-lg"></i>
             </button>
-            <a href="{{ site.baseurl }}/" title="HOME"><img src="{{ site.baseurl }}/logo.png" alt="logo" style="width:150px;cursor:pointer;margin-top:15px;"/></a>
+            <a href="{{ site.baseurl }}/" title="HOME"><img class="nav-logo" src="{{ site.baseurl }}/logo.png" alt="logo"/></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -29,3 +29,16 @@
     <!-- /.container -->
 </nav>
 
+<script>
+/* Aggiunge .is-scrolled alla barra non appena la pagina viene scorsa */
+(function () {
+  var nav = document.querySelector('.navbar-custom');
+  if (!nav) return;
+  function update() {
+    var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+    nav.classList.toggle('is-scrolled', y > 40);
+  }
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+})();
+</script>
