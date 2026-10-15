@@ -37,12 +37,12 @@ collections:
           - { label: "Paesaggi", value: "landscapes" }
         hint: "La foto comparirà nella galleria scelta."
 
-      - label: "Mostra anche in home"
+      - label: "Mostra nel carosello della home"
         name: "show_home"
         widget: "boolean"
         default: false
         required: false
-        hint: "Se nessuna foto è spuntata, la home mostra tutte le foto."
+        hint: "Se nessuna foto è spuntata, il carosello mostra tutte le foto. L'ordine segue il campo «Ordine in galleria»."
 
       - { label: "Immagine", name: "image", widget: "image" }
       - { label: "Testo alternativo", name: "alt", widget: "string", required: false, hint: "Breve descrizione per chi non vede l'immagine. Se vuoto si usa il titolo." }
