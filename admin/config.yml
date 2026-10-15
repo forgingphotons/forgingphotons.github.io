@@ -9,6 +9,15 @@ site_url: https://forgingphotons.github.io
 display_url: https://forgingphotons.github.io
 locale: it
 
+# Libreria media: Cloudinary (i file vengono caricati lì e nel repo resta solo l'indirizzo).
+# cloud_name e api_key sono dati pubblici; il "secret" NON va mai inserito qui.
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: lfvjdxxt
+    api_key: "614921367466431"
+
+# Cartella di riserva (foto già presenti nel repo)
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
@@ -55,10 +64,7 @@ collections:
         name: "video_file"
         widget: "file"
         required: false
-        media_library:
-          config:
-            max_file_size: 52428800   # 50 MB, in byte (vale solo per la libreria media predefinita)
-        hint: "Facoltativo, per clip brevi in formato MP4 (H.264) sotto i 50 MB. Per video più grandi usa il campo «Video (link)». Se compili entrambi vale questo."
+        hint: "Facoltativo. Carica un MP4 (H.264) su Cloudinary, max 100 MB nel piano gratuito. Per video più grandi usa il campo «Video (link)» con YouTube o Vimeo. Se compili entrambi vale questo."
       - { label: "Testo alternativo", name: "alt", widget: "string", required: false, hint: "Breve descrizione per chi non vede l'immagine. Se vuoto si usa il titolo." }
 
       # --- Dettagli di scatto ---
