@@ -44,7 +44,21 @@ collections:
         required: false
         hint: "Se nessuna foto è spuntata, il carosello mostra tutte le foto. L'ordine segue il campo «Ordine in galleria»."
 
-      - { label: "Immagine", name: "image", widget: "image" }
+      - { label: "Immagine", name: "image", widget: "image", hint: "Per i video è la copertina mostrata in galleria e nel carosello." }
+      - label: "Video (link)"
+        name: "video_url"
+        widget: "string"
+        required: false
+        pattern: ['^(https?://|/)', "Incolla un indirizzo che inizia con https:// (oppure con / per un file del sito)."]
+        hint: "Facoltativo. Link a un video YouTube o Vimeo, oppure a un file .mp4 ospitato altrove. Nella pagina della foto il video sostituisce l'immagine grande."
+      - label: "Video (file caricato)"
+        name: "video_file"
+        widget: "file"
+        required: false
+        media_library:
+          config:
+            max_file_size: 52428800   # 50 MB, in byte (vale solo per la libreria media predefinita)
+        hint: "Facoltativo, per clip brevi in formato MP4 (H.264) sotto i 50 MB. Per video più grandi usa il campo «Video (link)». Se compili entrambi vale questo."
       - { label: "Testo alternativo", name: "alt", widget: "string", required: false, hint: "Breve descrizione per chi non vede l'immagine. Se vuoto si usa il titolo." }
 
       # --- Dettagli di scatto ---

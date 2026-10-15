@@ -1,0 +1,66 @@
+{%- comment -%}
+  Lettore video. Parametri: url, poster (copertina, solo per i file .mp4), title.
+  Riconosce: YouTube (watch, youtu.be, shorts, embed, live), Vimeo (anche link "non in elenco")
+  e file diretti .mp4/.webm/.mov/.m4v/.ogv. Qualsiasi altro indirizzo diventa un semplice link.
+{%- endcomment -%}
+{%- assign v_url = include.url | strip -%}
+{%- assign v_low = v_url | downcase -%}
+{%- assign v_path = v_low | split: "?" | first -%}
+
+{%- assign yt_id = "" -%}
+{%- if v_low contains "youtu.be/" -%}
+  {%- assign yt_id = v_url | split: "youtu.be/" | last | split: "?" | first | split: "&" | first | split: "/" | first -%}
+{%- elsif v_low contains "youtube.com/watch" or v_low contains "youtube-nocookie.com/watch" -%}
+  {%- assign yt_id = v_url | split: "v=" | last | split: "&" | first | split: "#" | first -%}
+{%- elsif v_low contains "youtube.com/shorts/" -%}
+  {%- assign yt_id = v_url | split: "/shorts/" | last | split: "?" | first | split: "/" | first -%}
+{%- elsif v_low contains "youtube.com/live/" -%}
+  {%- assign yt_id = v_url | split: "/live/" | last | split: "?" | first | split: "/" | first -%}
+{%- elsif v_low contains "youtube.com/embed/" or v_low contains "youtube-nocookie.com/embed/" -%}
+  {%- assign yt_id = v_url | split: "/embed/" | last | split: "?" | first | split: "/" | first -%}
+{%- endif -%}
+
+{%- assign vm_id = "" -%}
+{%- assign vm_hash = "" -%}
+{%- if yt_id == "" and v_low contains "vimeo.com/" -%}
+  {%- assign vm_q = v_url | split: "?" -%}
+  {%- assign vm_segments = vm_q.first | split: "vimeo.com/" | last | split: "/" -%}
+  {%- for seg in vm_segments -%}
+    {%- if vm_id == "" -%}
+      {%- assign seg_num = seg | plus: 0 -%}
+      {%- if seg_num != 0 -%}{%- assign vm_id = seg -%}{%- endif -%}
+    {%- elsif vm_hash == "" -%}
+      {%- assign vm_hash = seg -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if vm_hash == "" and vm_q.size > 1 and vm_q.last contains "h=" -%}
+    {%- assign vm_hash = vm_q.last | split: "h=" | last | split: "&" | first -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- assign is_file = false -%}
+{%- if v_path contains ".mp4" or v_path contains ".webm" or v_path contains ".mov" or v_path contains ".m4v" or v_path contains ".ogv" -%}
+  {%- assign is_file = true -%}
+{%- endif -%}
+
+{%- if yt_id != "" -%}
+<div class="fp-video">
+  <iframe src="https://www.youtube-nocookie.com/embed/{{ yt_id | url_encode }}?rel=0" title="{{ include.title | escape }}" loading="lazy"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
+{%- elsif vm_id != "" -%}
+<div class="fp-video">
+  <iframe src="https://player.vimeo.com/video/{{ vm_id | url_encode }}{% if vm_hash != '' %}?h={{ vm_hash | url_encode }}{% endif %}" title="{{ include.title | escape }}" loading="lazy"
+          allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+</div>
+{%- elsif is_file -%}
+<div class="fp-video">
+  <video controls preload="metadata" playsinline{% if include.poster %} poster="{{ include.poster | relative_url }}"{% endif %}>
+    <source src="{{ v_url | relative_url | escape }}">
+    <a href="{{ v_url | relative_url | escape }}">Download the video</a>
+  </video>
+</div>
+{%- elsif v_url != "" -%}
+<p class="fp-video-link"><a href="{{ v_url | escape }}" target="_blank" rel="noopener">Watch the video &rarr;</a></p>
+{%- endif -%}

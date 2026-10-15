@@ -11,9 +11,14 @@ layout: default
 
   <h1>{{ page.title }}</h1>
 
+  {%- assign video = page.video_file | default: page.video_url | strip -%}
+  {%- if video != "" %}
+  {% include video-embed.html url=video poster=page.image title=page.title %}
+  {%- else %}
   <a href="{{ page.image | relative_url }}" target="_blank" rel="noopener" class="fp-photo-full" title="Open full size">
     <img src="{{ page.image | relative_url }}" alt="{{ page.alt | default: page.title }}">
   </a>
+  {%- endif %}
 
   <dl class="fp-meta">
     {% if page.shot_date and page.shot_date != "" %}<div><dt>Date</dt><dd>{{ page.shot_date | date: "%B %-d, %Y" }}</dd></div>{% endif %}

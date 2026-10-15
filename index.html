@@ -32,7 +32,7 @@ title: Home
              alt="{{ photo.alt | default: photo.title | escape }}"
              style="object-position: {{ photo.focal_x | default: 'center' }} {{ photo.focal_y | default: 'center' }};">
         <span class="fp-slide-caption">
-          {%- if cat %}<span class="fp-slide-cat">{{ cat.title }}</span>{% endif %}
+          {%- if cat %}<span class="fp-slide-cat">{{ cat.title }}{% assign has_video = photo.video_file | default: photo.video_url %}{% if has_video and has_video != "" %} &middot; &#9654; Video{% endif %}</span>{% endif %}
           <span class="fp-slide-title">{{ photo.title | escape }}</span>
         </span>
       </a>
