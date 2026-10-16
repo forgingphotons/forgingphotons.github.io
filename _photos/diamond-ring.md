@@ -7,7 +7,7 @@ technical_info: |-
   Type: Planetary Nebula
   Constellation: Hydra
   Distance: Approximately 2,700 light-years
-display_size: medium
+display_size: large
 shape: landscape
 position: 100
 focal_x: center
