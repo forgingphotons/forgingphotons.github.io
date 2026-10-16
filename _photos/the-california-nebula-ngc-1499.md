@@ -8,7 +8,7 @@ technical_info: |-
   Type: Emission Nebula
   Constellation: Perseus
   Distance: Approximately 1,000 light-years
-display_size: medium
+display_size: large
 shape: landscape
 position: 100
 focal_x: center
