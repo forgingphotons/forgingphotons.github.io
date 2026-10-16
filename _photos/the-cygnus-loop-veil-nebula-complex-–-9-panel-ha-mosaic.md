@@ -8,8 +8,8 @@ technical_info: |-
   Type: Supernova Remnant (SNR)
   Constellation: Cygnus (The Swan)
   Distance: Approximately 2,400 light-years
-display_size: medium
-shape: landscape
+display_size: small
+shape: portrait
 position: 100
 focal_x: center
 focal_y: center
