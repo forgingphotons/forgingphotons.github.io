@@ -1,5 +1,5 @@
 ---
-title: Heavend above Telescopio Nazionale Galileo
+title: Heavens above Telescopio Nazionale Galileo
 category: landscapes
 show_home: true
 video_file: https://youtu.be/QgQB4Dsa7lQ
