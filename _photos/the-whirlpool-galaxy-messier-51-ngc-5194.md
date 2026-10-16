@@ -2,14 +2,14 @@
 title: The Whirlpool Galaxy (Messier 51 / NGC 5194)
 category: galaxies
 show_home: true
-image: /assets/images/uploads/m51_rgb.tif
+image: https://res.cloudinary.com/lfvjdxxt/image/upload/v1792141082/M51.jpg
 shot_date: ""
 technical_info: |-
   Type: Interacting Grand-Design Spiral Galaxy
   Constellation: Canes Venatici
   Distance: Approximately 23 to 31 million light-years
-display_size: medium
-shape: landscape
+display_size: large
+shape: square
 position: 100
 focal_x: center
 focal_y: center
