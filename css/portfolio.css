@@ -41,7 +41,21 @@
   object-fit: cover;
   transition: transform 0.4s ease;
 }
-.fp-item:hover img { transform: scale(1.05); }
+.fp-item:hover img,
+.fp-item:hover .fp-tile-video { transform: scale(1.05); }
+
+/* Anteprima video che parte da sola (resta nascosta finché non sta davvero riproducendo) */
+.fp-item .fp-tile-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+.fp-item .fp-tile-video.is-playing { opacity: 1; }
 
 /* Dimensione = quante colonne occupa */
 .fp-item.fp-size-small    { grid-column: span 2; }

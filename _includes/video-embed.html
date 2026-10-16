@@ -45,18 +45,18 @@
 
 {%- if yt_id != "" -%}
 <div class="fp-video">
-  <iframe src="https://www.youtube-nocookie.com/embed/{{ yt_id | url_encode }}?rel=0" title="{{ include.title | escape }}" loading="lazy"
-          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen
+  <iframe src="https://www.youtube-nocookie.com/embed/{{ yt_id | url_encode }}?rel=0&autoplay=1&mute=1&playsinline=1" title="{{ include.title | escape }}" loading="lazy"
+          allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen
           referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </div>
 {%- elsif vm_id != "" -%}
 <div class="fp-video">
-  <iframe src="https://player.vimeo.com/video/{{ vm_id | url_encode }}{% if vm_hash != '' %}?h={{ vm_hash | url_encode }}{% endif %}" title="{{ include.title | escape }}" loading="lazy"
+  <iframe src="https://player.vimeo.com/video/{{ vm_id | url_encode }}?autoplay=1&muted=1{% if vm_hash != '' %}&h={{ vm_hash | url_encode }}{% endif %}" title="{{ include.title | escape }}" loading="lazy"
           allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 </div>
 {%- elsif is_file -%}
 <div class="fp-video">
-  <video controls preload="metadata" playsinline{% if include.poster and include.poster != "" %} poster="{{ include.poster | relative_url | escape }}"{% endif %}>
+  <video controls autoplay muted loop playsinline preload="auto"{% if include.poster and include.poster != "" %} poster="{{ include.poster | relative_url | escape }}"{% endif %}>
     <source src="{{ v_url | relative_url | escape }}">
     <a href="{{ v_url | relative_url | escape }}">Download the video</a>
   </video>
