@@ -249,6 +249,7 @@
 }
 
 .fp-slides, .fp-slide, .fp-slide-link { position: absolute; inset: 0; display: block; }
+.fp-slide-link { background: var(--bg-raised); }  /* visibile se la slide non ha copertina */
 
 .fp-slide {
   opacity: 0;

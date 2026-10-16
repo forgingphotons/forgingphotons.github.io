@@ -13,8 +13,9 @@ layout: default
 
   {%- assign video = page.video_file | default: page.video_url | strip -%}
   {%- if video != "" %}
-  {% include video-embed.html url=video poster=page.image title=page.title %}
-  {%- else %}
+  {% include cover-url.html photo=page %}
+  {% include video-embed.html url=video poster=cover_url title=page.title %}
+  {%- elsif page.image and page.image != "" %}
   <a href="{{ page.image | relative_url }}" target="_blank" rel="noopener" class="fp-photo-full" title="Open full size">
     <img src="{{ page.image | relative_url }}" alt="{{ page.alt | default: page.title }}">
   </a>

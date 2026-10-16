@@ -56,7 +56,7 @@
 </div>
 {%- elsif is_file -%}
 <div class="fp-video">
-  <video controls preload="metadata" playsinline{% if include.poster %} poster="{{ include.poster | relative_url }}"{% endif %}>
+  <video controls preload="metadata" playsinline{% if include.poster and include.poster != "" %} poster="{{ include.poster | relative_url | escape }}"{% endif %}>
     <source src="{{ v_url | relative_url | escape }}">
     <a href="{{ v_url | relative_url | escape }}">Download the video</a>
   </video>

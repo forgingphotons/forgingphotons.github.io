@@ -28,9 +28,12 @@ title: Home
     <div class="fp-slide{% if forloop.first %} is-active{% endif %}" role="group"
          aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ slides.size }}">
       <a class="fp-slide-link" href="{{ photo.url | relative_url }}"{% unless forloop.first %} tabindex="-1"{% endunless %}>
-        <img {% if forloop.first %}src="{{ photo.image | relative_url }}" fetchpriority="high"{% else %}data-src="{{ photo.image | relative_url }}"{% endif %}
+        {%- include cover-url.html photo=photo -%}
+        {%- if cover_url != "" %}
+        <img {% if forloop.first %}src="{{ cover_url | relative_url | escape }}" fetchpriority="high"{% else %}data-src="{{ cover_url | relative_url | escape }}"{% endif %}{% if cover_url contains 'maxresdefault' %} onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')"{% endif %}
              alt="{{ photo.alt | default: photo.title | escape }}"
              style="object-position: {{ photo.focal_x | default: 'center' }} {{ photo.focal_y | default: 'center' }};">
+        {%- endif %}
         <span class="fp-slide-caption">
           {%- if cat %}<span class="fp-slide-cat">{{ cat.title }}{% assign has_video = photo.video_file | default: photo.video_url %}{% if has_video and has_video != "" %} &middot; &#9654; Video{% endif %}</span>{% endif %}
           <span class="fp-slide-title">{{ photo.title | escape }}</span>

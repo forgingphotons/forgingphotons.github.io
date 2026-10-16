@@ -53,7 +53,7 @@ collections:
         required: false
         hint: "Se nessuna foto è spuntata, il carosello mostra tutte le foto. L'ordine segue il campo «Ordine in galleria»."
 
-      - { label: "Immagine", name: "image", widget: "image", hint: "Per i video è la copertina mostrata in galleria e nel carosello." }
+      - { label: "Immagine", name: "image", widget: "image", required: false, hint: "Obbligatoria per le foto. Per i video è facoltativa: se manca si usa la miniatura di YouTube o il primo fotogramma del video Cloudinary." }
       - label: "Video (link)"
         name: "video_url"
         widget: "string"

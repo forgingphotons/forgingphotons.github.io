@@ -1,0 +1,32 @@
+{%- comment -%}
+  Calcola l'immagine di copertina di una foto e la mette nella variabile "cover_url".
+  Parametro: photo (una voce della collezione photos, o "page" nel layout della foto).
+  Ordine di scelta:
+    1. il campo "Immagine", se compilato;
+    2. se manca, per un video YouTube la sua miniatura;
+    3. se manca, per un video caricato su Cloudinary il primo fotogramma (.jpg);
+    4. altrimenti resta vuota (la galleria mostra un riquadro scuro con l'icona play).
+{%- endcomment -%}
+{%- assign cover_url = include.photo.image | strip -%}
+{%- if cover_url == "" -%}
+  {%- assign cv = include.photo.video_file | default: include.photo.video_url | strip -%}
+  {%- assign cv_low = cv | downcase -%}
+  {%- assign cv_yt = "" -%}
+  {%- if cv_low contains "youtu.be/" -%}
+    {%- assign cv_yt = cv | split: "youtu.be/" | last | split: "?" | first | split: "&" | first | split: "/" | first -%}
+  {%- elsif cv_low contains "youtube.com/watch" or cv_low contains "youtube-nocookie.com/watch" -%}
+    {%- assign cv_yt = cv | split: "v=" | last | split: "&" | first | split: "#" | first -%}
+  {%- elsif cv_low contains "youtube.com/shorts/" -%}
+    {%- assign cv_yt = cv | split: "/shorts/" | last | split: "?" | first | split: "/" | first -%}
+  {%- elsif cv_low contains "youtube.com/live/" -%}
+    {%- assign cv_yt = cv | split: "/live/" | last | split: "?" | first | split: "/" | first -%}
+  {%- elsif cv_low contains "youtube.com/embed/" or cv_low contains "youtube-nocookie.com/embed/" -%}
+    {%- assign cv_yt = cv | split: "/embed/" | last | split: "?" | first | split: "/" | first -%}
+  {%- endif -%}
+  {%- if cv_yt != "" -%}
+    {%- assign cv_yt_enc = cv_yt | url_encode -%}
+    {%- assign cover_url = "https://i.ytimg.com/vi/" | append: cv_yt_enc | append: "/maxresdefault.jpg" -%}
+  {%- elsif cv_low contains "res.cloudinary.com/" and cv_low contains "/video/upload/" -%}
+    {%- assign cover_url = cv | split: "?" | first | replace: ".mp4", ".jpg" | replace: ".mov", ".jpg" | replace: ".webm", ".jpg" | replace: ".m4v", ".jpg" | replace: ".ogv", ".jpg" | replace: ".MP4", ".jpg" | replace: ".MOV", ".jpg" -%}
+  {%- endif -%}
+{%- endif -%}
