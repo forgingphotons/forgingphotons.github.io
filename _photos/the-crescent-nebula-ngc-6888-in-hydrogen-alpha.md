@@ -2,13 +2,13 @@
 title: The Crescent Nebula (NGC 6888) in Hydrogen-Alpha
 category: nebulas
 show_home: true
-image: /assets/images/uploads/ngc6888.tif
+image: https://res.cloudinary.com/lfvjdxxt/image/upload/v1792141085/NGC6888.jpg
 shot_date: ""
 technical_info: |-
   Type: Emission Nebula / Wolf-Rayet Bubble
   Constellation: Cygnus (The Swan)
   Distance: Approximately 4,700 light-years
-display_size: medium
+display_size: large
 shape: landscape
 position: 100
 focal_x: center
