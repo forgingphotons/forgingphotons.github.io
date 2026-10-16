@@ -8,8 +8,8 @@ technical_info: |-
   Type: Supernova Remnant
   Constellation: Taurus
   Distance: Approximately 6,500 light-years
-display_size: large
-shape: landscape
+display_size: small
+shape: portrait
 position: 100
 focal_x: center
 focal_y: center
