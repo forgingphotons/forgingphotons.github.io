@@ -12,7 +12,7 @@ technical_info: >-
   Distance: Ranging from ~1,500 to 6,000 light-years (foreground nebulae); ~26,000 light-years (Galactic Center)
 display_size: featured
 shape: panorama
-position: 100
+position: 10
 focal_x: center
 focal_y: center
 ---
