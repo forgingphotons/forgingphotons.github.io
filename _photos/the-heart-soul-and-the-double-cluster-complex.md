@@ -8,9 +8,9 @@ technical_info: |-
   Type: Wide-Field Emission Nebulae and Twin Open Star Clusters Complex
   Constellation: Cassiopeia and Perseus
   Distance: Approximately 7,500 light-years
-display_size: medium
+display_size: small
 shape: square
-position: 100
+position: 160
 focal_x: center
 focal_y: center
 ---
