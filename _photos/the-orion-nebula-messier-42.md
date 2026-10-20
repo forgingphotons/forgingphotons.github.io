@@ -8,9 +8,9 @@ technical_info: |-
   Type: Diffuse Emission Nebula / H II Region
   Constellation: Orion
   Distance: Approximately 1,344 light-years
-display_size: large
-shape: landscape
-position: 100
+display_size: small
+shape: portrait
+position: 170
 focal_x: center
 focal_y: center
 ---
