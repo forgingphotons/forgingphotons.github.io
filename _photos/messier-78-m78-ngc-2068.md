@@ -8,9 +8,9 @@ technical_info: |-
   Type: Reflection Nebula
   Constellation: Orion
   Distance: Approximately 1,350 light-years
-display_size: medium
-shape: landscape
-position: 100
+display_size: small
+shape: square
+position: 80
 focal_x: center
 focal_y: center
 ---
