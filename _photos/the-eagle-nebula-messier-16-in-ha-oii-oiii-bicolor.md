@@ -9,8 +9,8 @@ technical_info: |-
   Constellation: Serpens (The Serpent)
   Distance: Approximately 7,000 light-years
 display_size: medium
-shape: landscape
-position: 100
+shape: square
+position: 160
 focal_x: center
 focal_y: center
 ---
