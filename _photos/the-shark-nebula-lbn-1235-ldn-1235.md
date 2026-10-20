@@ -8,9 +8,9 @@ technical_info: |-
   Type: Dark Nebula Complex with Embedded Reflection Nebulae
   Constellation: Cepheus
   Distance: Approximately 650 to 800 light-years
-display_size: medium
+display_size: large
 shape: landscape
-position: 100
+position: 180
 focal_x: center
 focal_y: center
 ---
