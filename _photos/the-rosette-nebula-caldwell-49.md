@@ -8,9 +8,9 @@ technical_info: |-
   Type: Emission Nebula and Open Star Cluster (H II Region)
   Constellation: Monoceros (The Unicorn)
   Distance: Approximately 5,200 light-years
-display_size: medium
-shape: landscape
-position: 130
+display_size: featured
+shape: panorama
+position: 140
 focal_x: center
 focal_y: center
 ---
