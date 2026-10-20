@@ -4,7 +4,7 @@ category: nebulas
 show_home: true
 image: /assets/images/uploads/mw4.jpg
 shot_date: 2026-10-13T15:35:00.000+02:00
-display_size: medium
+display_size: large
 shape: landscape
 position: 110
 focal_x: center
