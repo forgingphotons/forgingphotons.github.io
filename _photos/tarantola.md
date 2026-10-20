@@ -8,7 +8,7 @@ technical_info: |-
   Type: Emission Nebula and Star-Forming Region
   Constellation: Carina (The Keel)
   Distance: Approximately 7,500 light-years
-display_size: medium
+display_size: small
 shape: portrait
 position: 120
 focal_x: center
