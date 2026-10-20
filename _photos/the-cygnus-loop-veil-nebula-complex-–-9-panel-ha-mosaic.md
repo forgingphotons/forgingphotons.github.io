@@ -9,7 +9,7 @@ technical_info: |-
   Constellation: Cygnus (The Swan)
   Distance: Approximately 2,400 light-years
 display_size: small
-shape: portrait
+shape: square
 position: 100
 focal_x: center
 focal_y: center
