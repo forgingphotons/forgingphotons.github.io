@@ -9,7 +9,7 @@ technical_info: |-
   Constellation: Canis Major
   Distance: Approximately 12,000 light-years
 display_size: medium
-shape: panorama
+shape: square
 position: 180
 focal_x: center
 focal_y: center
