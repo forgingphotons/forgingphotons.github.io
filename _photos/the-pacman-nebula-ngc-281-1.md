@@ -9,7 +9,7 @@ technical_info: |-
   Constellation: Cassiopeia
   Distance: Approximately 9,500 light-years
 display_size: small
-shape: landscape
+shape: square
 position: 90
 focal_x: center
 focal_y: center
