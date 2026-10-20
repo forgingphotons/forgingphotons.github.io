@@ -10,7 +10,7 @@ technical_info: |-
   Distance: Approximately 6,400 light-years
 display_size: medium
 shape: landscape
-position: 100
+position: 30
 focal_x: center
 focal_y: center
 ---
