@@ -8,9 +8,9 @@ technical_info: |-
   Type: Emission Nebula and Open Star Cluster
   Constellation: Auriga (The Charioteer)
   Distance: Approximately 12,000 light-years
-display_size: medium
-shape: landscape
-position: 100
+display_size: small
+shape: square
+position: 160
 focal_x: center
 focal_y: center
 ---
