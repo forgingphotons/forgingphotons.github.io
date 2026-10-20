@@ -8,8 +8,8 @@ technical_info: |-
   Type: Emission/Reflection Nebula & Supernova Remnant (Wide-Field Deep Sky)
   Constellations: Auriga and Taurus
   Distance: ~1,500 light-years (IC 405) / ~3,000 light-years (Simeis 147)
-display_size: medium
-shape: landscape
+display_size: featured
+shape: panorama
 position: 100
 focal_x: center
 focal_y: center
