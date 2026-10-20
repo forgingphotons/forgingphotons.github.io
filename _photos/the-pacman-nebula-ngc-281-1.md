@@ -8,9 +8,9 @@ technical_info: |-
   Type: Emission Nebula and Open Star Cluster
   Constellation: Cassiopeia
   Distance: Approximately 9,500 light-years
-display_size: large
+display_size: small
 shape: landscape
-position: 100
+position: 90
 focal_x: center
 focal_y: center
 ---
