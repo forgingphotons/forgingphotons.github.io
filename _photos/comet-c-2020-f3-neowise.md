@@ -6,7 +6,7 @@ image: /assets/images/uploads/c2020-neowise-f3.jpg
 shot_date: ""
 display_size: medium
 shape: portrait
-position: 100
+position: 10
 focal_x: center
 focal_y: center
 ---
