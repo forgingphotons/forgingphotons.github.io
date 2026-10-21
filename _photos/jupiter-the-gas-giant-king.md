@@ -4,9 +4,9 @@ category: solar-system
 show_home: true
 image: https://res.cloudinary.com/lfvjdxxt/image/upload/v1792141080/giove.jpg
 shot_date: ""
-display_size: large
-shape: landscape
-position: 140
+display_size: small
+shape: portrait
+position: 50
 focal_x: center
 focal_y: center
 ---
