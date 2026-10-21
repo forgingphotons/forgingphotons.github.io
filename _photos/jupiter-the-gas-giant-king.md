@@ -6,7 +6,7 @@ image: https://res.cloudinary.com/lfvjdxxt/image/upload/v1792141080/giove.jpg
 shot_date: ""
 display_size: large
 shape: landscape
-position: 100
+position: 140
 focal_x: center
 focal_y: center
 ---
