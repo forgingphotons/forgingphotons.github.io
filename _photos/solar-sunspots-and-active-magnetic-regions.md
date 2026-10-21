@@ -6,7 +6,7 @@ image: https://res.cloudinary.com/lfvjdxxt/image/upload/v1792141075/Copia_di__DS
 shot_date: ""
 display_size: medium
 shape: portrait
-position: 100
+position: 20
 focal_x: center
 focal_y: center
 ---
