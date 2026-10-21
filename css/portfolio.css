@@ -376,3 +376,15 @@
 @media (prefers-reduced-motion: reduce) {
   .fp-slide, .fp-slide.is-active { transition: none; }
 }
+
+/* ============ Pagine di testo (About): testo con foto ============ */
+.fp-page-body { font-size: 1.8rem; line-height: 1.7; }
+.fp-page-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 28px auto;
+  border-radius: 4px;
+}
+/* Didascalia: una riga in corsivo scritta subito sotto la foto, tra asterischi (*testo*) */
+.fp-page-body img + em { display: block; margin: -16px 0 28px; text-align: center; color: var(--text-muted); font-size: 1.5rem; }
