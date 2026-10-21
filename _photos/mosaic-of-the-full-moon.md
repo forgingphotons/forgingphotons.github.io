@@ -6,7 +6,7 @@ image: https://res.cloudinary.com/lfvjdxxt/image/upload/v1792141079/full_moon.jp
 shot_date: ""
 display_size: large
 shape: square
-position: 100
+position: 70
 focal_x: center
 focal_y: center
 ---
