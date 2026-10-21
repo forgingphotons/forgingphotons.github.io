@@ -4,7 +4,7 @@ category: solar-system
 show_home: true
 image: https://res.cloudinary.com/lfvjdxxt/image/upload/v1792141079/full_moon.jpg
 shot_date: ""
-display_size: medium
+display_size: large
 shape: square
 position: 100
 focal_x: center
