@@ -7,7 +7,7 @@ shot_date: ""
 technical_info: ""
 display_size: large
 shape: landscape
-position: 100
+position: 40
 focal_x: center
 focal_y: center
 ---
