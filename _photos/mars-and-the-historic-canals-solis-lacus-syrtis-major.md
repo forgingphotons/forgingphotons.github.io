@@ -6,7 +6,7 @@ image: https://res.cloudinary.com/lfvjdxxt/image/upload/v1792141088/mars.jpg
 shot_date: ""
 display_size: small
 shape: portrait
-position: 110
+position: 30
 focal_x: center
 focal_y: center
 ---
