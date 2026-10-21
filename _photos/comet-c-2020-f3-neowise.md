@@ -4,7 +4,7 @@ category: solar-system
 show_home: false
 image: /assets/images/uploads/c2020-neowise-f3.jpg
 shot_date: ""
-display_size: small
+display_size: medium
 shape: portrait
 position: 100
 focal_x: center
