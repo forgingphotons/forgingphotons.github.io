@@ -6,7 +6,7 @@ image: https://res.cloudinary.com/lfvjdxxt/image/upload/v1792149014/fasi_eclissi
 shot_date: ""
 display_size: featured
 shape: panorama
-position: 100
+position: 80
 focal_x: center
 focal_y: center
 ---
