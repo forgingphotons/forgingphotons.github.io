@@ -6,7 +6,7 @@ video_file: https://youtu.be/mseTqWavVss
 shot_date: ""
 display_size: medium
 shape: landscape
-position: 100
+position: 130
 focal_x: center
 focal_y: center
 ---
