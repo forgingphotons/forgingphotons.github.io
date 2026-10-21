@@ -15,7 +15,7 @@
 
 .fp-gallery {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   grid-auto-flow: dense;
   align-items: stretch;  /* ogni foto si allunga fino all'altezza della più alta della riga: niente fasce vuote */
   gap: 12px;
@@ -28,6 +28,8 @@
   border-radius: 4px;
   background: var(--bg-raised);
   cursor: pointer;
+  min-width: 0;        /* la foto non può mai allargare la propria colonna */
+  justify-self: stretch; /* larghezza = colonne assegnate (con aspect-ratio il valore predefinito la calcolerebbe dall'altezza) */
   grid-column: span 3;
   aspect-ratio: 3 / 2;
 }
@@ -111,7 +113,7 @@
 
 /* Tablet: 4 colonne */
 @media (max-width: 900px) {
-  .fp-gallery { grid-template-columns: repeat(4, 1fr); }
+  .fp-gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .fp-item.fp-size-small    { grid-column: span 1; }
   .fp-item.fp-size-medium   { grid-column: span 2; }
   .fp-item.fp-size-large    { grid-column: span 3; }
@@ -121,7 +123,7 @@
 /* Telefono: 2 colonne */
 @media (max-width: 560px) {
   .fp-wrap { padding: 14px; }
-  .fp-gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .fp-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .fp-item.fp-size-small,
   .fp-item.fp-size-medium   { grid-column: span 1; }
   .fp-item.fp-size-large,
