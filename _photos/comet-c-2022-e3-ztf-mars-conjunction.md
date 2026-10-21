@@ -5,7 +5,7 @@ show_home: false
 image: /assets/images/uploads/c2022-e2-ztf.jpg
 shot_date: ""
 technical_info: ""
-display_size: medium
+display_size: large
 shape: landscape
 position: 100
 focal_x: center
