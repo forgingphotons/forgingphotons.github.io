@@ -4,9 +4,9 @@ category: solar-system
 show_home: true
 image: https://res.cloudinary.com/lfvjdxxt/image/upload/v1792141074/AR2565-AR2567-AR2568_17-7-2016.jpg
 shot_date: ""
-display_size: medium
+display_size: small
 shape: portrait
-position: 160
+position: 80
 focal_x: center
 focal_y: center
 ---
