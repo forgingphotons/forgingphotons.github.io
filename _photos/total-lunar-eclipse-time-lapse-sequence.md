@@ -4,8 +4,8 @@ category: solar-system
 show_home: true
 video_file: https://youtu.be/mseTqWavVss
 shot_date: ""
-display_size: medium
-shape: landscape
+display_size: small
+shape: portrait
 position: 130
 focal_x: center
 focal_y: center
