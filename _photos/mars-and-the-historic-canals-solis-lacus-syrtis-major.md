@@ -4,7 +4,7 @@ category: solar-system
 show_home: false
 image: https://res.cloudinary.com/lfvjdxxt/image/upload/v1792141088/mars.jpg
 shot_date: ""
-display_size: medium
+display_size: small
 shape: portrait
 position: 100
 focal_x: center
