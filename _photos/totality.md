@@ -8,7 +8,7 @@ shot_date: 2026-10-13T15:23:00.000+02:00
 technical_info: ""
 display_size: large
 shape: landscape
-position: 100
+position: 60
 focal_x: center
 focal_y: center
 ---
