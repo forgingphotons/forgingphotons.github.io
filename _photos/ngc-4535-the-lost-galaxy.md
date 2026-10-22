@@ -8,9 +8,9 @@ technical_info: |-
   Type: Barred Spiral Galaxy
   Constellation: Virgo
   Distance: Approximately 52 million light-years
-display_size: large
-shape: landscape
-position: 100
+display_size: small
+shape: portrait
+position: 30
 focal_x: center
 focal_y: center
 ---
