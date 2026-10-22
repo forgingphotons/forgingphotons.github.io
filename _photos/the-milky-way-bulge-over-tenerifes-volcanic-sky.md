@@ -6,7 +6,7 @@ image: https://res.cloudinary.com/lfvjdxxt/image/upload/v1792141096/milkyway_ten
 shot_date: ""
 display_size: small
 shape: portrait
-position: 100
+position: 20
 focal_x: center
 focal_y: center
 ---
