@@ -8,9 +8,9 @@ technical_info: |-
   Type: Spiral Galaxy (Seyfert II Active Galaxy)
   Constellation: Canes Venatici
   Distance: Approximately 23.5 to 25 million light-years
-display_size: medium
+display_size: large
 shape: landscape
-position: 100
+position: 40
 focal_x: center
 focal_y: center
 ---
