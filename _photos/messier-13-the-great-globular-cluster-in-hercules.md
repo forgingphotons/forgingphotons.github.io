@@ -8,8 +8,8 @@ technical_info: |-
   Type: Globular Star Cluster
   Constellation: Hercules
   Distance: Approximately 22,200 light-years
-display_size: medium
-shape: landscape
+display_size: large
+shape: square
 position: 100
 focal_x: center
 focal_y: center
