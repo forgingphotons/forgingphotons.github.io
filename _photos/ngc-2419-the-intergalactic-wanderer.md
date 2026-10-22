@@ -8,8 +8,8 @@ technical_info: |-
   Type: Globular Cluster
   Constellation: Lynx
   Distance: Approximately 300,000 light-years
-display_size: medium
-shape: landscape
+display_size: small
+shape: portrait
 position: 100
 focal_x: center
 focal_y: center
