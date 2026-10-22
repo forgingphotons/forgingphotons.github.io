@@ -8,8 +8,8 @@ technical_info: |-
   Type: Dwarf Satellite Galaxy / Irregular Galaxy
   Constellations: Dorado / Mensa
   Distance: Approximately 163,000 light-years
-display_size: medium
-shape: landscape
+display_size: large
+shape: square
 position: 100
 focal_x: center
 focal_y: center
